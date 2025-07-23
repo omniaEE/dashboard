@@ -1,36 +1,45 @@
+# Dashboard Project
+
 This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## Getting Started
+## Setup Instructions
 
-First, run the development server:
+1. **Install dependencies**
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+   Using pnpm (recommended):
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+   ```bash
+   pnpm install
+   ```
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+   Or with npm:
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+   ```bash
+   npm install
+   ```
 
-## Learn More
+2. **Run the development server**
 
-To learn more about Next.js, take a look at the following resources:
+   ```bash
+   pnpm dev
+   # or
+   npm run dev
+   ```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+3. **Open the app**
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+   Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Deploy on Vercel
+## Implementation Approach
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+This dashboard is built using Next.js App Router and React components. The UI is modular, with reusable components for the header, navigation links, and dashboard sections.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+- **Header**: The header is implemented as a fixed element at the top of the page using Tailwind CSS utility classes (`position-fixed top-0 left-0 w-full z-50`). This ensures it remains visible at all times, providing consistent branding and navigation access.
+
+- **Navigation Links**: The navigation sidebar uses a dynamic list of links, each with an icon and label. The active link is highlighted based on the current route using `usePathname` and `clsx` for conditional styling. This provides clear navigation feedback to users.
+
+- **Component Structure**: Components are organized by feature (e.g., `dashboard`, `customers`, `invoices`) for maintainability. UI elements are styled with Tailwind CSS for rapid development and consistent design.
+
+This approach ensures a scalable, maintainable, and user-friendly dashboard experience.
+
+...existing code...
