@@ -1,8 +1,10 @@
 # Dashboard Project
 
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+A modern dashboard built with [Next.js](https://nextjs.org), [React](https://react.dev/), and [Tailwind CSS](https://tailwindcss.com/).
 
-## Setup Instructions
+---
+
+## 🚀 Setup Instructions
 
 1. **Install dependencies**
 
@@ -27,19 +29,53 @@ This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-
    ```
 
 3. **Open the app**
-
    Visit [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Implementation Approach
+---
 
-This dashboard is built using Next.js App Router and React components. The UI is modular, with reusable components for the header, navigation links, and dashboard sections.
+## 🛠️ Implementation Approach
 
-- **Header**: The header is implemented as a fixed element at the top of the page using Tailwind CSS utility classes (`position-fixed top-0 left-0 w-full z-50`). This ensures it remains visible at all times, providing consistent branding and navigation access.
+- **Framework & Structure:**  
+  Built with Next.js App Router and modular React components for maintainability.
+- **Styling:**  
+  Tailwind CSS for utility-first styling, custom color system, and use of `next/font` & `next/image` for optimized assets.
+- **Routing & Navigation:**  
+  File-system routing for dashboard sections, dynamic sidebar navigation using `next/link` and active state with `usePathname`.
+- **Database:**  
+  PostgreSQL integration, Vercel deployment, and instant previews via GitHub linking.
+- **Data Handling:**  
+  Parallel data fetching, static rendering for layout, dynamic rendering for real-time data, and pagination for lists.
 
-- **Navigation Links**: The navigation sidebar uses a dynamic list of links, each with an icon and label. The active link is highlighted based on the current route using `usePathname` and `clsx` for conditional styling. This provides clear navigation feedback to users.
+---
 
-- **Component Structure**: Components are organized by feature (e.g., `dashboard`, `customers`, `invoices`) for maintainability. UI elements are styled with Tailwind CSS for rapid development and consistent design.
+## 🔒 Authentication
 
-This approach ensures a scalable, maintainable, and user-friendly dashboard experience.
+Authentication is powered by [NextAuth.js](https://next-auth.js.org/) for secure, scalable user management.
 
-...existing code...
+- **Custom Login Route:**  
+  `/login` route with a custom login form, wrapped in React Suspense.
+- **NextAuth.js Integration:**  
+  Credentials provider for email/password authentication, with passwords securely hashed using `bcryptjs`.
+- **Middleware Protection:**  
+  Next.js Middleware restricts dashboard routes to authenticated users only.
+- **Error Handling:**  
+  Login errors and pending states managed with React’s `useActionState`.
+- **Logout Functionality:**  
+  Secure logout from the dashboard sidebar.
+
+This approach ensures your dashboard is secure, user-friendly, and production-ready.  
+See [NextAuth.js documentation](https://next-auth.js.org/) for more details.
+
+---
+
+## 📦 Tech Stack
+
+- **Next.js** 15
+- **React** 19
+- **Tailwind CSS** 4
+- **PostgreSQL** (via [postgres.js](https://github.com/porsager/postgres))
+- **bcryptjs** (password hashing)
+- **clsx** (conditional classNames)
+- **@heroicons/react** (icons)
+
+---
